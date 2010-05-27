@@ -1,0 +1,30 @@
+std=c++98: leads to undeclared v/snprintf errors
+htonl, etc: removes countless old-style cast warnings
+
+--- origsrc/podofo-0.8.0/CMakeLists.txt	2010-04-25 10:25:41.000000000 -0500
++++ src/podofo-0.8.0/CMakeLists.txt	2010-05-26 11:49:40.343635000 -0500
+@@ -272,9 +272,9 @@ IF(CMAKE_COMPILER_IS_GNUCXX)
+     # will hide _tzset() and _timezone, which we need for PdfDate.
+     # At least until that code is replaced with something better,
+     # just don't enable it on win32.
+-    IF(NOT WIN32)
++    IF(NOT WIN32 AND NOT CYGWIN)
+         ADD_DEFINITIONS(-std=c++98)
+-    ENDIF(NOT WIN32)
++    ENDIF(NOT WIN32 AND NOT CYGWIN)
+ 
+     ADD_DEFINITIONS(
+         -Wall
+--- origsrc/podofo-0.8.0/src/PdfCompilerCompatPrivate.h	2010-02-20 11:08:29.000000000 -0600
++++ src/podofo-0.8.0/src/PdfCompilerCompatPrivate.h	2010-05-26 11:31:38.065732300 -0500
+@@ -124,6 +124,10 @@ inline static double logb(double x) {
+  * so you do NOT need to #ifdef them. They'll be inlined and
+  * then optimized out with any sane compiler and C library.
+  */
++#undef htonl
++#undef htons
++#undef ntohl
++#undef ntohs
+ 
+ inline static pdf_uint32 podofo_ntohl(pdf_uint32 i) {
+ #ifdef _WIN32
