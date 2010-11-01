@@ -3,16 +3,20 @@ inherit cmake
 DESCRIPTION="C++ PDF library"
 HOMEPAGE="http://podofo.sourceforge.net/"
 SRC_URI="mirror://sourceforge/podofo/${P}.tar.gz"
-PATCH_URI="0.8.0-compile.patch"
 
-PKG_NAMES="${PN} lib${PN}-devel" # lib${PN}${PV}
+PATCH_URI="
+	0.8.0-compile.patch
+	0.8.4-cstdio.patch
+"
+
+PKG_NAMES="${PN} lib${PN}-devel lib${PN}${PV}"
+PKG_HINTS="${PN} lib${PN}-devel lib${PN}"
 podofo_CONTENTS="usr/bin/podofo* usr/share/"
 libpodofo_devel_CONTENTS="usr/include/ usr/lib/"
-#declare libpodofo${PV//./_}_CONTENTS="usr/bin/*-${PV}.dll"
+declare libpodofo${PV//./_}_CONTENTS="usr/bin/*-${PV}.dll"
 
-# shared libpodofo has issues with throwing C++ exceptions over DLL boundaries
 CYGCMAKE_ARGS="
-	-DPODOFO_BUILD_SHARED=FALSE
+	-DPODOFO_BUILD_SHARED=TRUE
 	-DPODOFO_BUILD_STATIC=TRUE
 	-DPODOFO_USE_VISIBILITY=FALSE
 	-DPODOFO_HAVE_WINSOCK2_H=FALSE

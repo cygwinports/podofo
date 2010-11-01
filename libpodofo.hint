@@ -1,7 +1,7 @@
 category: Graphics
-requires: libpodofo0.8.4 libfontconfig-devel libfreetype-devel libjpeg-devel libpng14-devel libtiff-devel zlib-devel
+requires: libfontconfig1 libfreetype6 libgcc1 libjpeg8 libpng14 libstdc++6 libtiff5 zlib0
 external-source: podofo
-sdesc: "C++ PDF library (development)"
+sdesc: "C++ PDF library (runtime)"
 ldesc: "The PoDoFo library is a free, portable C++ library which 
 includes classes to parse PDF files and modify their contents into 
 memory. The changes can be written back to disk easily. The parser can 
