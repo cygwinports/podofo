@@ -1,7 +1,7 @@
 error: ‘FILE’ does not name a type
 
---- origsrc/podofo-0.8.4/src/PdfInputDevice.h	2009-04-03 13:36:41.000000000 -0500
-+++ src/podofo-0.8.4/src/PdfInputDevice.h	2010-11-01 13:07:00.668245900 -0500
+--- origsrc/podofo-0.8.4/src/base/PdfInputDevice.h	2009-04-03 13:36:41.000000000 -0500
++++ src/podofo-0.8.4/src/base/PdfInputDevice.h	2010-11-01 13:07:00.668245900 -0500
 @@ -21,6 +21,7 @@
  #ifndef _PDF_INPUT_DEVICE_H_
  #define _PDF_INPUT_DEVICE_H_
@@ -10,8 +10,8 @@ error: ‘FILE’ does not name a type
  #include <istream>
  
  #include "PdfDefines.h"
---- origsrc/podofo-0.8.4/src/PdfInputStream.h	2009-04-03 13:36:41.000000000 -0500
-+++ src/podofo-0.8.4/src/PdfInputStream.h	2010-11-01 13:05:26.178881200 -0500
+--- origsrc/podofo-0.8.4/src/base/PdfInputStream.h	2009-04-03 13:36:41.000000000 -0500
++++ src/podofo-0.8.4/src/base/PdfInputStream.h	2010-11-01 13:05:26.178881200 -0500
 @@ -22,6 +22,7 @@
  #define _PDF_INPUT_STREAM_H_
  
@@ -20,8 +20,8 @@ error: ‘FILE’ does not name a type
  
  namespace PoDoFo {
  
---- origsrc/podofo-0.8.4/src/PdfOutputDevice.h	2009-05-02 06:37:17.000000000 -0500
-+++ src/podofo-0.8.4/src/PdfOutputDevice.h	2010-11-01 13:06:10.155357800 -0500
+--- origsrc/podofo-0.8.4/src/base/PdfOutputDevice.h	2009-05-02 06:37:17.000000000 -0500
++++ src/podofo-0.8.4/src/base/PdfOutputDevice.h	2010-11-01 13:06:10.155357800 -0500
 @@ -22,6 +22,7 @@
  #define _PDF_OUTPUT_DEVICE_H_
  
@@ -30,8 +30,8 @@ error: ‘FILE’ does not name a type
  #include <ostream>
  
  #include "PdfDefines.h"
---- origsrc/podofo-0.8.4/src/PdfOutputStream.h	2009-04-03 13:36:41.000000000 -0500
-+++ src/podofo-0.8.4/src/PdfOutputStream.h	2010-11-01 13:05:33.666894200 -0500
+--- origsrc/podofo-0.8.4/src/base/PdfOutputStream.h	2009-04-03 13:36:41.000000000 -0500
++++ src/podofo-0.8.4/src/base/PdfOutputStream.h	2010-11-01 13:05:33.666894200 -0500
 @@ -24,6 +24,7 @@
  #include "PdfDefines.h"
  #include "PdfRefCountedBuffer.h"

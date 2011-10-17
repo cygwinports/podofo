@@ -15,8 +15,8 @@ htonl, etc: removes countless old-style cast warnings
  
      ADD_DEFINITIONS(
          -Wall
---- origsrc/podofo-0.8.0/src/PdfCompilerCompatPrivate.h	2010-02-20 11:08:29.000000000 -0600
-+++ src/podofo-0.8.0/src/PdfCompilerCompatPrivate.h	2010-05-26 11:31:38.065732300 -0500
+--- origsrc/podofo-0.8.0/src/base/PdfCompilerCompatPrivate.h	2010-02-20 11:08:29.000000000 -0600
++++ src/podofo-0.8.0/src/base/PdfCompilerCompatPrivate.h	2010-05-26 11:31:38.065732300 -0500
 @@ -124,6 +124,10 @@ inline static double logb(double x) {
   * so you do NOT need to #ifdef them. They'll be inlined and
   * then optimized out with any sane compiler and C library.

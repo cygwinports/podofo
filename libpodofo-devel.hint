@@ -1,5 +1,5 @@
 category: Graphics
-requires: libpodofo0.8.4 libfontconfig-devel libfreetype-devel libjpeg-devel libpng14-devel libtiff-devel zlib-devel
+requires: libpodofo0.9.1 libfontconfig-devel libfreetype-devel libjpeg-devel libpng14-devel libtiff-devel zlib-devel
 external-source: podofo
 sdesc: "C++ PDF library (development)"
 ldesc: "The PoDoFo library is a free, portable C++ library which 

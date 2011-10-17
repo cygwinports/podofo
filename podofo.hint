@@ -1,5 +1,5 @@
 category: Graphics
-requires: libgcc1 libpodofo0.8.4 libstdc++6 lua
+requires: libgcc1 libpodofo0.9.1 libstdc++6 lua
 sdesc: "C++ PDF utilities"
 ldesc: "The PoDoFo library is a free, portable C++ library which 
 includes classes to parse PDF files and modify their contents into 
