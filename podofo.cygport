@@ -1,0 +1,33 @@
+inherit cmake
+
+NAME="podofo"
+VERSION=0.9.1
+RELEASE=2
+CATEGORY="Graphics"
+SUMMARY="C++ PDF library"
+DESCRIPTION="The PoDoFo library is a free, portable C++ library which includes
+classes to parse PDF files and modify their contents into memory. The changes
+can be written back to disk easily. The parser can also be used to extract
+information from a PDF file (for example the parser could be used in a PDF
+viewer). Besides parsing PoDoFo includes also very simple classes to create
+your own PDF files."
+HOMEPAGE="http://podofo.sourceforge.net/"
+SRC_URI="mirror://sourceforge/podofo/${P}.tar.gz"
+
+PATCH_URI="
+	0.8.0-compile.patch
+	0.8.4-cstdio.patch
+"
+
+PKG_NAMES="${PN} lib${PN}-devel lib${PN}${PV}"
+podofo_SUMMARY="C++ PDF utilities"
+podofo_CONTENTS="usr/bin/podofo* usr/share/"
+libpodofo_devel_CONTENTS="usr/include/ usr/lib/"
+declare libpodofo${PV//./_}_CONTENTS="usr/bin/*-${PV}.dll"
+
+CYGCMAKE_ARGS="
+	-DPODOFO_BUILD_SHARED=TRUE
+	-DPODOFO_BUILD_STATIC=FALSE
+	-DPODOFO_USE_VISIBILITY=FALSE
+	-DPODOFO_HAVE_WINSOCK2_H=FALSE
+"
