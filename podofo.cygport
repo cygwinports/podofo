@@ -1,9 +1,9 @@
 inherit cmake
 
 NAME="podofo"
-VERSION=0.9.1
-RELEASE=2
-CATEGORY="Graphics"
+VERSION=0.9.2
+RELEASE=1
+CATEGORY="Libs"
 SUMMARY="C++ PDF library"
 DESCRIPTION="The PoDoFo library is a free, portable C++ library which includes
 classes to parse PDF files and modify their contents into memory. The changes
@@ -19,11 +19,12 @@ PATCH_URI="
 	0.8.4-cstdio.patch
 "
 
-PKG_NAMES="${PN} lib${PN}-devel lib${PN}${PV}"
+PKG_NAMES="${NAME} lib${NAME}0.9.1 lib${NAME}-devel"
+podofo_CATEGORY="Graphics"
 podofo_SUMMARY="C++ PDF utilities"
 podofo_CONTENTS="usr/bin/podofo* usr/share/"
+libpodofo0_9_1_CONTENTS="usr/bin/cygpodofo-0.9.1.dll"
 libpodofo_devel_CONTENTS="usr/include/ usr/lib/"
-declare libpodofo${PV//./_}_CONTENTS="usr/bin/*-${PV}.dll"
 
 CYGCMAKE_ARGS="
 	-DPODOFO_BUILD_SHARED=TRUE
