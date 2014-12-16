@@ -17,6 +17,7 @@ SRC_URI="mirror://sourceforge/podofo/podofo-${VERSION}.tar.gz"
 PATCH_URI="
 	0.8.0-compile.patch
 	0.8.4-cstdio.patch
+	0.9.3-cygwin32.patch
 "
 
 PKG_NAMES="${NAME} lib${NAME}0.9.3 lib${NAME}-devel"

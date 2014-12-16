@@ -1,0 +1,14 @@
+test/unit/EncryptTest.cpp:211:83: error: no matching function for call to
+‘PoDoFo::PdfEncrypt::Decrypt(unsigned char*&, int&, unsigned char*&, long int&)’
+
+--- origsrc/podofo-0.9.3/test/unit/EncryptTest.h	2012-12-12 16:55:46.000000000 -0600
++++ src/podofo-0.9.3/test/unit/EncryptTest.h	2014-12-16 13:34:33.599228800 -0600
+@@ -83,7 +83,7 @@ class EncryptTest : public CppUnit::Test
+ 
+  private:
+   char* m_pEncBuffer;
+-  long  m_lLen;
++  PoDoFo::pdf_long  m_lLen;
+   int   m_protection;
+   
+ };
