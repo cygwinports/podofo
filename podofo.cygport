@@ -2,7 +2,7 @@ inherit cmake
 
 NAME="podofo"
 VERSION=0.9.3
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="C++ PDF library"
 DESCRIPTION="The PoDoFo library is a free, portable C++ library which includes
