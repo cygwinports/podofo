@@ -1,8 +1,8 @@
 inherit cmake
 
 NAME="podofo"
-VERSION=0.9.3
-RELEASE=3
+VERSION=0.9.4
+RELEASE=1
 CATEGORY="Libs"
 SUMMARY="C++ PDF library"
 DESCRIPTION="The PoDoFo library is a free, portable C++ library which includes
@@ -13,18 +13,16 @@ viewer). Besides parsing PoDoFo includes also very simple classes to create
 your own PDF files."
 HOMEPAGE="http://podofo.sourceforge.net/"
 SRC_URI="mirror://sourceforge/podofo/podofo-${VERSION}.tar.gz"
-
 PATCH_URI="
-	0.8.0-compile.patch
-	0.8.4-cstdio.patch
 	0.9.3-cygwin32.patch
+	0.9.4-cygwin-ftm.patch
 "
 
-PKG_NAMES="${NAME} lib${NAME}0.9.3 lib${NAME}-devel"
+PKG_NAMES="${NAME} lib${NAME}0.9.4 lib${NAME}-devel"
 podofo_CATEGORY="Graphics"
 podofo_SUMMARY="C++ PDF utilities"
 podofo_CONTENTS="usr/bin/podofo* usr/share/"
-libpodofo0_9_3_CONTENTS="usr/bin/cygpodofo-0.9.3.dll"
+libpodofo0_9_4_CONTENTS="usr/bin/cygpodofo-0.9.4.dll"
 libpodofo_devel_REQUIRES="zlib-devel"
 libpodofo_devel_CONTENTS="usr/include/ usr/lib/"
 
@@ -32,5 +30,6 @@ CYGCMAKE_ARGS="
 	-DPODOFO_BUILD_SHARED=TRUE
 	-DPODOFO_BUILD_STATIC=FALSE
 	-DPODOFO_USE_VISIBILITY=FALSE
+	-DPODOFO_HAVE_BASETSD_H=FALSE
 	-DPODOFO_HAVE_WINSOCK2_H=FALSE
 "
